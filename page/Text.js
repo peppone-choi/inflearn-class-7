@@ -36,6 +36,7 @@ export class Text {
     }
     this.text.split("").forEach((char, index) => {
       const span = document.createElement("span");
+      span.style.fontSize = "2rem";
       span.textContent = char;
       span.style.color = charColor[index];
       this.textContainer.appendChild(span);

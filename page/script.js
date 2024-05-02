@@ -18,7 +18,7 @@ const inputContainer = document.createElement("div");
 const wpmContainer = document.createElement("div");
 const cpmContainer = document.createElement("div");
 const resetButton = document.createElement("button");
-const time = 360;
+const time = 60;
 
 const errors = new Errors(errorsContainer);
 const timer = new Timer(timeContainer, time);
@@ -111,7 +111,6 @@ function checkInput(text, input) {
     }
   });
   wordSum = correctWordsCnt;
-
   errors.render();
   accuracy.calculateAccuracy(textAllLength, errorSum + errorCnt);
   wpms.calculateWPM(wordSum, time);
@@ -165,6 +164,7 @@ const timeOut = () => {
 };
 
 const reset = () => {
+  charColor = [];
   timer.resetTimer(time);
   timer.render();
   input.clearInput();

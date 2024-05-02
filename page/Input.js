@@ -5,16 +5,17 @@ export class Input {
     if (inputSingleton) {
       return new Error("Input container already exists");
     }
-    this.input = document.createElement("input");
+    this.input = document.createElement("textarea");
     this.inputContainer = inputContainer;
     this.inputContainer.classList.add("input-container");
     this.inputContainer.style.display = "block";
     this.inputContainer.style.textAlign = "center";
     this.inputContainer.style.marginTop = "2rem";
-    this.input.style.width = "50%";
-    this.input.style.height = "2rem";
-    this.input.style.fontSize = "1.5rem";
+    this.input.className = "nes-textarea";
+    this.input.style.width = "100%";
+    this.input.style.fontSize = "2rem";
     this.input.style.textAlign = "center";
+    this.input.style.margin = "2rem auto";
     this.input.placeholder = "Start typing here...";
     this.inputContainer.appendChild(this.input);
   }
